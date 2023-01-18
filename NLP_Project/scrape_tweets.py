@@ -136,9 +136,8 @@ def scrape_tweets(search_words, numRuns, until=datetime.now().date(), numTweets=
     # Save DataFrame as .csv
     csv_timestamp = datetime.today().strftime("%Y%m%d_%H%M%S")
     file_name = os.path.join(
-        "C:\\Users\\Stephen.Cole\\Dropbox\\My PC (XT-LPT-012)\\Documents\\Upskilling\\NLP_Project\\data\\{}_disasterTweets.csv".format(
-            csv_timestamp
-        )
+        config("DATA_PATH"), 
+        "{}_disasterTweets.csv".format(csv_timestamp)
     )
     tweet_df.to_csv(file_name, index=False)
     print("SCRAPING COMPLETE")
